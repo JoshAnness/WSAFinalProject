@@ -12,18 +12,19 @@
     </thead>
     <tbody>
         @foreach (Movie m in Model) {
-        <tr>
-            <td>@m.Name</td>
-            <td>@m.Year</td>
-            <td>@m.Genre.Name</td>
-            <td>@m.Duration</td>
-            <td>Will be link to description</td>
-            <td>Will Be link to cast</td>
-            <td>
-                <a asp-action="Edit" asp-controller="Movie" asp-route-id="@m.MovieId" class="btn btn-outline-dark">Edit</a>
-                <a asp-action="Delete" asp-controller="Movie" asp-route-id="@m.MovieId" class="btn btn-outline-dark">Delete</a>
-            </td>
-        </tr>
+
+            <tr>
+                <td>@m.Name</td>
+                <td>@m.Year</td>
+                <td>@m.Genre</td>
+                <td>@m.Duration</td>
+                <td>Will be link to description</td>
+                <td>Will Be link to cast</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Movie" asp-route-id="@m.MovieId" class="btn btn-outline-dark">Edit</a>
+                    <a asp-action="Delete" asp-controller="Movie" asp-route-id="@m.MovieId" class="btn btn-outline-dark">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

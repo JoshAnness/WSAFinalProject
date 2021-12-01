@@ -33,7 +33,7 @@ namespace MovieList.Controllers
             ViewBag.Casts = context.Casts.OrderBy(c => c.CastId).ToList();
             ViewBag.Descriptions = context.Descriptions.OrderBy(d => d.DescriptionId).ToList();
             var movie = context.Movies.Find(id);
-            return View(viewName: "../Movie/Edit", movie);
+            return View("Edit", movie);
         }
 
         [HttpPost]

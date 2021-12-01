@@ -8,12 +8,12 @@ namespace WSAFinalProject.Models
     public class Actor
     {
         public Actor() {
-            Movies = new List<Movie>();
+            ActorMovies = new List<ActorMovie>();
         }
         public int ActorId { get; set; }
         public string Name { get; set; }
         public string BirthYear { get; set; }
-        public ICollection<Movie> Movies { get; set; }
+        public ICollection<ActorMovie> ActorMovies { get; set; }
 
         //public ActorCast ActorCast { get; set; }
     }

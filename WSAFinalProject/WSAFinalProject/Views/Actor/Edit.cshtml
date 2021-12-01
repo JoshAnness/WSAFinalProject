@@ -1,0 +1,55 @@
+﻿@model Actor
+@{
+    string title = ViewBag.Action + " Actor";
+    ViewBag.Title = title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BirthYear">Birth Year</label>
+        <input asp-for="BirthYear" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <fieldset>
+            <legend>Movies</legend>
+            <ul>
+                @{
+                    foreach (Movie m in ViewBag.Movies)
+                    {
+                        <li>
+                            <label for="@m.MovieId">@m.Name</label>
+                            @{
+                                var actorMovie = new ActorMovie { ActorId = Model.ActorId, MovieId = m.MovieId };
+                                if (Model.ActorMovies.Contains(actorMovie))
+                                { 
+                                    <input type="checkbox" name="Movies" value="@m.MovieId" checked />
+                                }
+                                else 
+                                { 
+                                    <input type="checkbox" name="Movies" value="@m.MovieId" />
+                                }
+                             }
+                        </li>
+                    }
+                }
+            </ul>
+        </fieldset>
+    </div>
+
+
+    <input type="hidden" asp-for="ActorId" />
+
+
+    <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+    <a asp-controller="Actor" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

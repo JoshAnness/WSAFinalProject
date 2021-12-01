@@ -14,6 +14,8 @@ namespace WSAFinalProject.Models
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Cast> Casts { get; set; }
 
+        public DbSet<ActorMovie> ActorMovies { get; set; }
+
         //public DbSet<ActorCast> ActorCasts { get; set; }
 
 
@@ -24,12 +26,14 @@ namespace WSAFinalProject.Models
             modelBuilder.ApplyConfiguration(new GenreConfig());
             modelBuilder.ApplyConfiguration(new MovieConfig());
             modelBuilder.ApplyConfiguration(new CastConfig());
+            
 
             modelBuilder.Entity<Genre>().HasMany(g => g.Movies).WithOne(m => m.Genre);
             modelBuilder.Entity<Cast>().HasOne(c => c.Movie).WithOne(m => m.Cast);
             modelBuilder.Entity<Description>().HasOne(d => d.Movie).WithOne(m => m.Description);
-            //modelBuilder.Entity<ActorCast>().HasMany(a => a.Actors).WithOne(b => b.ActorCast);
-            //modelBuilder.Entity<ActorCast>().HasMany(a => a.Casts).WithOne(c => c.ActorCast);
+            modelBuilder.Entity<ActorMovie>().HasKey(am => new { am.ActorId, am.MovieId });
+            modelBuilder.Entity<ActorMovie>().HasOne(am => am.Actor).WithMany(a => a.ActorMovies).HasForeignKey(am => am.ActorId);
+            modelBuilder.Entity<ActorMovie>().HasOne(am => am.Movie).WithMany(m => m.ActorMovies).HasForeignKey(am => am.MovieId);
         }
 
     }
