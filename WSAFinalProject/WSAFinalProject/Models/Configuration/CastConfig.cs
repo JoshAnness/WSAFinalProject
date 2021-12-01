@@ -12,8 +12,8 @@ namespace WSAFinalProject.Models
         public void Configure(EntityTypeBuilder<Actor> entity)
         {
             entity.HasData(
-                new Cast { CastId = "1" },
-                new Cast { CastId = "2" }
+                new Cast { CastId = 1 },
+                new Cast { CastId = 2 }
             );
         }
     }

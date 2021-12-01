@@ -12,15 +12,15 @@ namespace WSAFinalProject.Models
         public void Configure(EntityTypeBuilder<Genre> entity)
         {
             entity.HasData(
-                    new Genre { GenreId = "1", Name = "Horror" },
-                    new Genre { GenreId = "2", Name = "SciFi" },
-                    new Genre { GenreId = "3", Name = "Drama" },
-                    new Genre { GenreId = "4", Name = "Comedy" },
-                    new Genre { GenreId = "5", Name = "RomCom" },
-                    new Genre { GenreId = "6", Name = "Action" },
-                    new Genre { GenreId = "7", Name = "SuperHero" },
-                    new Genre { GenreId = "8", Name = "Musical" },
-                    new Genre { GenreId = "9", Name = "Documentary" }
+                    new Genre { GenreId = 1, Name = "Horror" },
+                    new Genre { GenreId = 2, Name = "SciFi" },
+                    new Genre { GenreId = 3, Name = "Drama" },
+                    new Genre { GenreId = 4, Name = "Comedy" },
+                    new Genre { GenreId = 5, Name = "RomCom" },
+                    new Genre { GenreId = 6, Name = "Action" },
+                    new Genre { GenreId = 7, Name = "SuperHero" },
+                    new Genre { GenreId = 8, Name = "Musical" },
+                    new Genre { GenreId = 9, Name = "Documentary" }
                 );
         }
     }

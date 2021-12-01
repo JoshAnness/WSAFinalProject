@@ -7,8 +7,8 @@ namespace WSAFinalProject.Models
 {
     public class ActorCast
     {
-        public string ActorId { get; set; }
-        public string CastId { get; set; }
+        public int ActorId { get; set; }
+        public int CastId { get; set; }
 
         public ICollection<Actor> Actors { get; set; }
         public ICollection<Cast> Casts { get; set; }

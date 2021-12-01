@@ -11,7 +11,7 @@ namespace WSAFinalProject.Models
         {
             Actors = new List<Actor>();
         }
-        public string CastId { get; set; }
+        public int CastId { get; set; }
 
         public List<Actor> Actors { get; set; }
 

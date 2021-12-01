@@ -7,7 +7,7 @@ namespace WSAFinalProject.Models
 {
     public class Description
     {
-        public string DescriptionId { get; set; }
+        public int DescriptionId { get; set; }
 
         public string DescriptionText { get; set; }
 

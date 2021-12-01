@@ -10,7 +10,7 @@ namespace WSAFinalProject.Models
         public Actor() {
             Movies = new List<Movie>();
         }
-        public string ActorId { get; set; }
+        public int ActorId { get; set; }
         public string Name { get; set; }
         public string BirthYear { get; set; }
         public ICollection<Movie> Movies { get; set; }

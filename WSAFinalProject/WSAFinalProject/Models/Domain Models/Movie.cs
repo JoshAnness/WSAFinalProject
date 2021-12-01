@@ -16,15 +16,15 @@ namespace WSAFinalProject.Models
         [Required(ErrorMessage = "Please enter a year.")]
         [Range(1888, 3000, ErrorMessage = "Year must be after 1888.")]
         public int? Year { get; set; }
-        public string GenreId { get; set; }
+        public int GenreId { get; set; }
         public Genre Genre { get; set; }
 
         public int Duration { get; set; }
 
-        public string DescriptionId { get; set; }
+        public int DescriptionId { get; set; }
         public Description Description { get; set; }
 
-        public string CastId { get; set; }
+        public int CastId { get; set; }
         public Cast Cast { get; set; }
     }
 }
