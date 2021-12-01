@@ -1,12 +1,10 @@
-﻿
+﻿@model List<Movie>
 @{
-    ViewData["Title"] = "Final Project Home";
+    ViewBag.Title = "Final Project Home";
 }
 
 <h1>Web Server Application Development II Final Project Home</h1>
 <h2>Our favorite movies</h2>
-
-<a asp-controller="Movie" asp-action="Add">Add New Movie</a>
 
 <table class="table">
     <thead>
@@ -21,10 +19,6 @@
             <td>@m.Duration</td>
             <td>@m.Description</td>
             <td>@m.Cast</td>
-            <td>
-                <my-link-button action="Edit" controller="Movie" id="@m.MovieId">Edit</my-link-button>
-                <my-link-button action="Delete" controller="Class" id="@m.MovieId">Delete</my-link-button>
-            </td>
         </tr>
         }
     </tbody>

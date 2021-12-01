@@ -12,12 +12,6 @@ namespace WSAFinalProject.Controllers
     public class HomeController : Controller
     {
         private MovieContext context {get; set;}
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public HomeController(MovieContext ctx) {
             context = ctx;
