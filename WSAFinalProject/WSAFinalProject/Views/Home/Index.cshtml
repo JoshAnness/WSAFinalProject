@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Movie>
-
+﻿
 @{
     ViewData["Title"] = "Final Project Home";
 }
@@ -7,16 +6,11 @@
 <h1>Web Server Application Development II Final Project Home</h1>
 <h2>Our favorite movies</h2>
 
-<div class="text-center">
-    <h1 class="display-4">Class Schedule</h1>
-    <vc:day-filter></vc:day-filter>
-</div>
-
-<a asp-action="Add" asp-controller="Class" class="ml-3">Add Class</a>
+<a asp-controller="Movie" asp-action="Add">Add New Movie</a>
 
 <table class="table">
     <thead>
-        <tr><th>Title</th><th>Number</th><th>Teacher</th><th>Day</th><th>Time</th><th></th></tr>
+        <tr><th>Name</th><th>Year</th><th>Genre</th><th>Duration</th><th>Description</th><th>Cast</th></tr>
     </thead>
     <tbody>
         @foreach (Movie m in Model) {
