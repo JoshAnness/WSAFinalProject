@@ -1,7 +1,37 @@
-﻿@{
+﻿@model IEnumerable<Movie>
+
+@{
     ViewData["Title"] = "Final Project Home";
 }
 
-
 <h1>Web Server Application Development II Final Project Home</h1>
 <h2>Our favorite movies</h2>
+
+<div class="text-center">
+    <h1 class="display-4">Class Schedule</h1>
+    <vc:day-filter></vc:day-filter>
+</div>
+
+<a asp-action="Add" asp-controller="Class" class="ml-3">Add Class</a>
+
+<table class="table">
+    <thead>
+        <tr><th>Title</th><th>Number</th><th>Teacher</th><th>Day</th><th>Time</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (Movie m in Model) {
+        <tr>
+            <td>@m.Name</td>
+            <td>@m.Year</td>
+            <td>@m.Genre</td>
+            <td>@m.Duration</td>
+            <td>@m.Description</td>
+            <td>@m.Cast</td>
+            <td>
+                <my-link-button action="Edit" controller="Movie" id="@m.MovieId">Edit</my-link-button>
+                <my-link-button action="Delete" controller="Class" id="@m.MovieId">Delete</my-link-button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
