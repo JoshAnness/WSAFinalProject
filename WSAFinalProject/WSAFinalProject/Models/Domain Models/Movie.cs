@@ -8,10 +8,13 @@ namespace WSAFinalProject.Models
 {
     public class Movie
     {
-        public string MovieId { get; set; }
+        public int MovieId { get; set; }
 
+        [Required(ErrorMessage = "Please enter a name.")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Please enter a year.")]
+        [Range(1888, 3000, ErrorMessage = "Year must be after 1888.")]
         public int? Year { get; set; }
         public string GenreId { get; set; }
         public Genre Genre { get; set; }
