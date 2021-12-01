@@ -11,7 +11,7 @@ namespace WSAFinalProject.Models
 
         public string DescriptionText { get; set; }
 
-        public Movie Movie;
+        public Movie Movie { get; set; }
 
     }
 }

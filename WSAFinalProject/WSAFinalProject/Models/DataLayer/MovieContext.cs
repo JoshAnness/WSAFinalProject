@@ -14,7 +14,7 @@ namespace WSAFinalProject.Models
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Cast> Casts { get; set; }
 
-        public DbSet<ActorCast> ActorCasts { get; set; }
+        //public DbSet<ActorCast> ActorCasts { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,8 +28,8 @@ namespace WSAFinalProject.Models
             modelBuilder.Entity<Genre>().HasMany(g => g.Movies).WithOne(m => m.Genre);
             modelBuilder.Entity<Cast>().HasOne(c => c.Movie).WithOne(m => m.Cast);
             modelBuilder.Entity<Description>().HasOne(d => d.Movie).WithOne(m => m.Description);
-            modelBuilder.Entity<ActorCast>().HasMany(a => a.Actors).WithOne(b => b.ActorCast);
-            modelBuilder.Entity<ActorCast>().HasMany(a => a.Casts).WithOne(c => c.ActorCast);
+            //modelBuilder.Entity<ActorCast>().HasMany(a => a.Actors).WithOne(b => b.ActorCast);
+            //modelBuilder.Entity<ActorCast>().HasMany(a => a.Casts).WithOne(c => c.ActorCast);
         }
 
     }

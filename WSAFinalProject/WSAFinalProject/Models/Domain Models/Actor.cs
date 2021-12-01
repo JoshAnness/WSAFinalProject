@@ -15,6 +15,6 @@ namespace WSAFinalProject.Models
         public string BirthYear { get; set; }
         public ICollection<Movie> Movies { get; set; }
 
-        public ActorCast ActorCast { get; set; }
+        //public ActorCast ActorCast { get; set; }
     }
 }

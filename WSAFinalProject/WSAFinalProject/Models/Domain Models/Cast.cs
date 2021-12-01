@@ -17,6 +17,6 @@ namespace WSAFinalProject.Models
 
         public Movie Movie { get; set; }
 
-        public ActorCast ActorCast { get; set; }
+        //public ActorCast ActorCast { get; set; }
     }
 }

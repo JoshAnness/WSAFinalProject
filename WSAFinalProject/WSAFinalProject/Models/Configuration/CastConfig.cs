@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace WSAFinalProject.Models
 {
-    public class CastConfig : IEntityTypeConfiguration<Actor>
+    public class CastConfig : IEntityTypeConfiguration<Cast>
     {
-        public void Configure(EntityTypeBuilder<Actor> entity)
+        public void Configure(EntityTypeBuilder<Cast> entity)
         {
             entity.HasData(
                 new Cast { CastId = 1 },
