@@ -1,0 +1,70 @@
+﻿@model Movie
+@{
+    string title = ViewBag.Action + " Movie";
+    ViewBag.Title = title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Year">Year</label>
+        <input asp-for="Year" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GenreId">Genre</label>
+        <select asp-for="GenreId" class="form-control">
+            <option value="">Select A Genre</option>
+            @{ foreach (Genre g in ViewBag.Genres)
+                {
+                    <option value="@g.GenreId">@g.Name</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Duration">Duration (minutes)</label>
+        <input asp-for="Duration" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DescriptionId">Description</label>
+        <select asp-for="DescriptionId" class="form-control">
+            <option value="">Select A Description</option>
+            @{ 
+                foreach (Description d in ViewBag.Descriptions)
+                    {
+                        <option value="@d.DescriptionId">@d.DescriptionText</option>
+                    }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CastId">Cast</label>
+        <select asp-for="CastId" class="form-control">
+            <option value="">Select a Cast</option>
+            @{ 
+                foreach (Cast c in ViewBag.Casts)
+                {
+                    <option value="@c.CastId">Will Be Available Soon</option>
+                }
+            }
+        </select>
+    </div>
+
+    <input type="hidden" asp-for="MovieId" />
+
+
+    <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
