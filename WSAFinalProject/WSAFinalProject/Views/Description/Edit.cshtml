@@ -1,0 +1,37 @@
+﻿@model Description
+@{
+    string title = ViewBag.Action + " Description";
+    ViewBag.Title = title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+
+    <div class="form-group">
+        <label asp-for="Movie.Name">Movie Name</label>
+        <select asp-for="Movie" class="form-control">
+            <option value="">Select A Movie</option>
+            @{ foreach (Movie m in ViewBag.Movies)
+                {
+                    <option value="@m">@m.Name</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DescriptionText" for="DescriptionText">Desscription</label>
+        <textarea asp-for="DescriptionText" id="DescriptionText" rows="5" cols="45" class="form-control"></textarea>
+    </div>
+
+
+
+    <input type="hidden" asp-for="DescriptionId" />
+
+
+    <button type="submit" class="btn btn-primary">@ViewBag.Action</button>
+    <a asp-controller="Description" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
