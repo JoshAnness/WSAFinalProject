@@ -1,0 +1,31 @@
+﻿@model Actor
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<h3>@Model.Name</h3>
+<h2>Born in @Model.BirthYear</h2>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>Movies</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ActorMovie am in Model.ActorMovies)
+        {
+            if (Model.ActorId == am.ActorId)
+            {
+                <tr>@am.Movie.Name</tr>
+            }
+        }
+
+    </tbody>
+</table>
+
+
+
+
+
