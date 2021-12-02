@@ -16,7 +16,7 @@
         @foreach (Description d in Model)
         {
             <tr>
-                <td>@d.Movie.Name</td>
+                <td>@d.Movie</td>
                 <td>@d.DescriptionText</td>
                 <td>
                     <a asp-action="Edit" asp-controller="Description" asp-route-id="@d.DescriptionId" class="btn btn-outline-dark">Edit</a>

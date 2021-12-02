@@ -31,9 +31,11 @@ namespace WSAFinalProject.Models
             modelBuilder.Entity<Genre>().HasMany(g => g.Movies).WithOne(m => m.Genre);
             modelBuilder.Entity<Cast>().HasOne(c => c.Movie).WithOne(m => m.Cast);
             modelBuilder.Entity<Description>().HasOne(d => d.Movie).WithOne(m => m.Description);
+
             modelBuilder.Entity<ActorMovie>().HasKey(am => new { am.ActorId, am.MovieId });
             modelBuilder.Entity<ActorMovie>().HasOne(am => am.Actor).WithMany(a => a.ActorMovies).HasForeignKey(am => am.ActorId);
             modelBuilder.Entity<ActorMovie>().HasOne(am => am.Movie).WithMany(m => m.ActorMovies).HasForeignKey(am => am.MovieId);
+
         }
 
     }
