@@ -1,0 +1,31 @@
+﻿@model List<Description>
+@{
+    ViewBag.Title = "View All Descriptions";
+}
+
+<h2>Description List</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>Movie Name</td>
+            <td>Description</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Description d in Model)
+        {
+            <tr>
+                <td>@d.Movie.Name</td>
+                <td>@d.DescriptionText</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Description" asp-route-id="@d.DescriptionId" class="btn btn-outline-dark">Edit</a>
+                    <a asp-action="Delete" asp-controller="Description" asp-route-id="@d.DescriptionId" class="btn btn-outline-dark">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="align-self-center">
+    <a class="btn btn-outline-primary" asp-area="" asp-controller="Description" asp-action="Add">Add a Description</a>
+</div>

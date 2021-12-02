@@ -1,0 +1,14 @@
+﻿@model Description
+@{
+    ViewBag.Title = "Delete Description";
+}
+
+<h2>Confirm Deletion</h2>
+<h3>@Model.Movie.Name Description</h3>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="DescriptionId" />
+
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-controller="Description" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
