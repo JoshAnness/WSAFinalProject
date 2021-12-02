@@ -25,6 +25,13 @@ namespace WSAFinalProject.Controllers
         }
 
         [HttpGet]
+        public IActionResult Individual(int id) 
+        {
+            var actor = context.Actors.Find(id);
+            return View(actor);
+        }
+
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             ViewBag.Action = "Edit";
