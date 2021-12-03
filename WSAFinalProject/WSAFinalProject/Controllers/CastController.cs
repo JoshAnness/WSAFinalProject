@@ -22,7 +22,7 @@ namespace WSAFinalProject.Controllers
             ViewBag.Action = "Add";
             ViewBag.Movies = context.Movies.OrderBy(m => m.Name).ToList();
             ViewBag.Actors = context.Actors.OrderBy(a => a.Name).ToList();
-            return View("Edit", new Actor());
+            return View("Edit", new Cast());
         }
 
         [HttpGet]
