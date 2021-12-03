@@ -18,6 +18,14 @@ a {
   border-color: #1861ac;
 }
 
+h1, h2 {
+    text-align: center;
+}
+
+table {
+        background-color: white;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
@@ -27,7 +35,8 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    cursor: url("customCursor2.png"), auto;
 }
 @media (min-width: 768px) {
   html {
@@ -59,8 +68,13 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-image: url("film.jpg");
+    backround-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .footer {
   position: absolute;
