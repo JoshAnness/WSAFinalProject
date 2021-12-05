@@ -18,9 +18,6 @@ namespace MovieList.Controllers
         {
             ViewBag.Action = "Add";
             ViewBag.Genres = context.Genres.OrderBy(g => g.Name).ToList();
-            ViewBag.Actors = context.Actors.OrderBy(a => a.Name).ToList();
-            ViewBag.Casts = context.Casts.OrderBy(c => c.CastId).ToList();
-            ViewBag.Descriptions = context.Descriptions.OrderBy(d => d.DescriptionId).ToList();
             return View("Edit", new Movie());
         }
 
@@ -29,9 +26,6 @@ namespace MovieList.Controllers
         {
             ViewBag.Action = "Edit";
             ViewBag.Genres = context.Genres.OrderBy(g => g.Name).ToList();
-            ViewBag.Actors = context.Actors.OrderBy(a => a.Name).ToList();
-            ViewBag.Casts = context.Casts.OrderBy(c => c.CastId).ToList();
-            ViewBag.Descriptions = context.Descriptions.OrderBy(d => d.DescriptionId).ToList();
             var movie = context.Movies.Find(id);
             return View("Edit", movie);
         }
@@ -52,9 +46,6 @@ namespace MovieList.Controllers
             {
                 ViewBag.Action = (movie.MovieId == 0) ? "Add" : "Edit";
                 ViewBag.Genres = context.Genres.OrderBy(g => g.Name).ToList();
-                ViewBag.Actors = context.Actors.OrderBy(a => a.Name).ToList();
-                ViewBag.Casts = context.Casts.OrderBy(c => c.CastId).ToList();
-                ViewBag.Descriptions = context.Descriptions.OrderBy(d => d.DescriptionId).ToList();
                 return View(movie);
             }
         }

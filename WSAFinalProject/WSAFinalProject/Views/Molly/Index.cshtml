@@ -1,12 +1,36 @@
+﻿@model List<Movie>
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1 style="font-size: 2rem">About Molly Bischoff</h1>
-<p>I'm a senior software developer student at the University of Cincinnati.</p>
-<p>My hobbies include Cards, video games, anime, and pikkleball.</p>
-<p>My favorites movies are: The Lord of the Rings Trology and Princess Mononoke.</p>
-<img src="css/Ryanpic.jpg" alt="Ryan" width="400" height="600"/>
+<h1>About Molly Bischoff</h1>
+
+<p>My name is Molly Bischoff and I am a senior at the University of Cincinnatti in the Information Technology: Software Development program.<br />
+    I live in Dayton, Ohio with my partner and our pets. We have one dog and two cats.<br />
+    <br />
+    My favorite genres of movies are Science Fiction and Horror.
+    Please see a collection of some of my favorite movies below.</p>
 
 
+<table class="table">
+    <thead>
+        <tr><th colspan="5">My Favorite Movies</th></tr>
+        <tr><<th>Name</th><th>Year</th><th>Genre</th><th>Duration</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (Movie m in Model)
+        {
+                <tr>
+                    <td>@m.Name</td>
+                    <td>@m.Year</td>
+                    <td>@m.Genre.Name</td>
+                    <td>@m.Duration minutes</td>
+                    <td>
+                        <a asp-action="Individual" asp-controller="Movie" asp-route-id="@m.MovieId" class="btn btn-outline-dark">View</a>
+                    </td>
+                </tr>
+            }
 
+        }
+    </tbody>
+</table>

@@ -8,10 +8,6 @@ namespace WSAFinalProject.Models
 {
     public class Movie
     {
-        public Movie() 
-        {
-            ActorMovies = new List<ActorMovie>();
-        }
         public int MovieId { get; set; }
 
         [Required(ErrorMessage = "Please enter a name.")]
@@ -30,13 +26,8 @@ namespace WSAFinalProject.Models
         public int Duration { get; set; }
 
         [Required(ErrorMessage = "Please enter a description.")]
-        public int DescriptionId { get; set; }
-        public Description Description { get; set; }
+        public string Description { get; set; }
 
-        public int CastId { get; set; }
-        public Cast Cast { get; set; }
-
-        public ICollection<ActorMovie> ActorMovies { get; set; }
     }
 }
 

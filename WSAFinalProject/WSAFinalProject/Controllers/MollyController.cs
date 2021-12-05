@@ -14,11 +14,25 @@ namespace WSAFinalProject.Controllers
         public MollyController(MovieContext ctx)
         {
             context = ctx;
-        } 
+        }
 
         public IActionResult Index()
         {
-            return View();
+            var movies = new List<Movie>();
+            foreach (Movie m in context.Movies)
+            {
+                if (m.GenreId == 1)
+                {
+                    m.Genre = context.Genres.Find(m.GenreId);
+                    movies.Add(m);
+                }
+                else if (m.GenreId == 2)
+                {
+                    m.Genre = context.Genres.Find(m.GenreId);
+                    movies.Add(m);
+                }
+            }
+            return View(movies);
         }
     }
 }

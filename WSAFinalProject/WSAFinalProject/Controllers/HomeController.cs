@@ -20,6 +20,10 @@ namespace WSAFinalProject.Controllers
         public IActionResult Index()
         {
             var movies = context.Movies.OrderBy(m => m.Name).ToList();
+            foreach(Movie m in movies)
+            {
+                m.Genre = context.Genres.Find(m.GenreId);
+            }
             return View(movies);
         }
 
