@@ -1,2 +1,2 @@
 # WSAFinalProject - Our Favorite Movies
-https://user-images.githubusercontent.com/46828931/150807345-145c62d5-4503-4978-9a82-31d71406d634.JPG
+![wsa](https://user-images.githubusercontent.com/46828931/150807474-5db1ce95-a084-4f12-b319-f0f0344747ff.JPG)
